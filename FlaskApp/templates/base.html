@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker - Texas Hold'em</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css">
+    <!-- Add any additional CSS or JS imports here -->
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Navbar -->
+    <nav class="p-4 shadow-lg" style="background-image: url('poker-chip-bg.jpg');">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ url_for('index') }}" class="text-2xl font-semibold">Texas Hold'em</a>
+            <img src="{{ url_for('static',filename='images/white-poker.png') }}" alt="Poker Icon" style="height: 20px; width: 20px;">
+            <div class="flex space-x-4">
+                {% if current_user.is_authenticated %}
+                    <span class="nav-link">Hello, {{ current_user.username }}</span>
+                    <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+                {% endif %}
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('play_poker') }}" class="nav-link">Play Poker</a>
+                <a href="{{ url_for('rules') }}" class="nav-link">Rules</a>
+                <a href="{{ url_for('tips') }}" class="nav-link">Tips</a>
+                <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mx-auto p-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Add any additional scripts here -->
+</body>
+</html>
+
+
+
+<!-- <img src="{{ url_for('static', filename=current_user.profile_picture) }}" class="w-10 h-10 rounded-full" alt="Profile Picture"> -->
+                      

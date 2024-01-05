@@ -1,0 +1,55 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set minimum height to full viewport height */
+}
+
+nav {
+    background-color: #292828;
+    color: #fff; /* White color for text */
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #eeeeee; /* White color for text */
+    font-weight: bold;
+}
+
+main {
+    flex: 1; /* Allow main content to take up remaining space */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #000; /* Black color for text in main */
+}
+
+h1, h2, h3 {
+    color: #424242; /* Grey color for headings */
+}
+
+footer {
+    background-color: #292828;
+    color: #828181; /* Grey color */
+    text-align: center;
+    padding: 5px; /* Reduced padding */
+    margin-top: auto; /* Push the footer to the bottom */
+}
